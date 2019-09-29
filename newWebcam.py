@@ -23,7 +23,7 @@ with open('./oneShotLearning.csv', 'w') as csvFile:
 csvFile.close()
 
 # Initialise cam, window name, img_counter and users
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 cv2.namedWindow("test")
 img_counter = 1
 userInput = [" Hello to:", " "]
@@ -150,7 +150,7 @@ while True:
             print("left is", left )
             print("top is ", top)
 
-            timestamp =  datetime.now().second + datetime.now().minute * 60
+            timestamp =  datetime.now().second + datetime.now().minute * 60 + datetime.now().hour * 60 * 60
             row = [face_names[count], left, top, timestamp, len(face_names), count]
             with open('./oneShotLearning.csv', 'a') as csvFile:
                 writer = csv.writer(csvFile)
