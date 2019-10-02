@@ -9,7 +9,7 @@ from datetime import datetime
 import pandas as pd
 
 server_configuration = {
-    "port": 5001,
+    "port": 5005,
     "host": "localhost",
     "debug": True
 
@@ -77,7 +77,7 @@ def update_data(interval):
 
     # 
 
-update_data(2)
+update_data(0.2)
 
 
 @app.route('/')
